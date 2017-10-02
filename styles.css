@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face{
+  font-family: "digital";
+  font-weight: normal;
+  font-style: normal;
+  src: url(fonts/digital-7.ttf);
+}
+
+#calc{
+  font-family: digital, monospace;
+  background: #747474;
+  background-image: radial-gradient(ellipse at center, #101010, #353535);
+  border: solid 2px #4d4d4d;
+  border-radius: 20px;
+  width: 260px;
+  height: 360px;
+  position: relative;
+  margin: 2rem auto;
+  box-shadow: 0px 1px 15px #666666;
+
+}
+
+#inner{
+  position: relative;
+  width: 230px;
+  margin: auto;
+}
+
+#output{
+  text-align: right;
+  background-color: #9ab8c2;
+  box-shadow: inset -1px -1px 10px 1px rgba(0,0,0,0.75);
+  border: solid 2px gray;
+  border-radius: 9px;
+  width: 214px;
+  position: relative;
+  margin: 30px auto 20px;
+  padding: 10px;
+}
+
+#outputMain{
+  font-size: 2.25rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#outputSub{
+  font-size: 1rem;
+  color: gray;
+}
+#bttns{
+  width: 214px;
+  margin: auto;
+}
+
+.bttn{
+  width: 40px;
+  height: 30px;
+  margin: 5px;
+  background: #f0f0f0;
+  background-image: linear-gradient(to bottom, #f0f0f0, #8f8f8f);
+  border: solid 1px #8f8f8f;
+  border-radius: 9px;
+  box-shadow: 1px 1px 1px black;
+  font-size: 1rem;
+}
+
+#clear{
+  width: 149px;
+  background: #cc003a;
+  background-image: linear-gradient(to bottom, #cc003a, #8c001e);
+  border: solid 1px #8c001e;
+}

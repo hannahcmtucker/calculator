@@ -2,33 +2,36 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
 </head>
 <body>
   <form>
-    <output id="outputMain">0</output>
-    <br/>
-    <output id="outputSub">0</output>
-    <br/>
-    <div id="bttns">
-    <input type="button" value="0">
-    <input type="button" value="1">
-    <input type="button" value="2">
-    <input type="button" value="3">
-    <input type="button" value="4">
-    <input type="button" value="5">
-    <input type="button" value="6">
-    <input type="button" value="7">
-    <input type="button" value="8">
-    <input type="button" value="9">
-    <input type="button" value=".">
-    <input type="button" value="+">
-    <input type="button" value="-">
-    <input type="button" value="/">
-    <input type="button" value="*">
-    <br/>
-    <input type="button" value="AC">
-    <input type="button" value="=">
-    </div>
+    <div id="calc">
+        <div id="inner">
+            <div id="output">
+              <output id="outputMain">0</output>
+              <output id="outputSub">0</output>
+            </div>
+            <div id="bttns">
+                <input type="button" class="bttn" id="clear" value="AC">
+                <input type="button" class="bttn" value="/">
+                <input type="button" class="bttn" value="7">
+                <input type="button" class="bttn" value="8">
+                <input type="button" class="bttn" value="9">
+                <input type="button" class="bttn" value="*">
+                <input type="button" class="bttn" value="4">
+                <input type="button" class="bttn" value="5">
+                <input type="button" class="bttn" value="6">
+                <input type="button" class="bttn" value="-">
+                <input type="button" class="bttn" value="1">
+                <input type="button" class="bttn" value="2">
+                <input type="button" class="bttn" value="3">
+                <input type="button" class="bttn" value="+">
+                <input type="button" class="bttn" value="0">  
+                <input type="button" class="bttn" value=".">
+                <input type="button" class="bttn" id="equals" value="=">
+            </div>
+        </div>    
   </form> 
 <script type="text/javascript" src="main.js"></script>   
 </body>
