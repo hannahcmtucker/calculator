@@ -1,7 +1,8 @@
 const operators = ["*", "/", "+", "-"];
 let log = [];
 let inner = [];
-let marker = false;
+let outputMain = document.getElementById('outputMain');
+let outputSub = document.getElementById('outputSub');
 
 window.onload = function (){
   document.querySelector("#bttns").addEventListener('click', function(ev){ 
@@ -13,11 +14,9 @@ window.onload = function (){
         if (value === "="){
           findAns();
         } else {
-          if (!operators.includes(value) || log.length > 0 || inner.length > 0){
-            logInput(value);
-            displayMain();
-            displaySub(value);
-          }
+          logInput(value);
+          displayMain();
+          displaySub();
         } 
       }
     }
@@ -26,7 +25,9 @@ window.onload = function (){
 
 function logInput(value){
   if (!operators.includes(value)){
-    inner.push(value)
+    if (!(value === "0" && inner.length === 0)){
+      inner.push(value)
+    }
   } else{
     if (inner.length > 0){
       log.push(inner.join(''))
@@ -37,20 +38,22 @@ function logInput(value){
 }
 
 function displayMain(){
-  if (inner.length > 0){
-    document.getElementById('outputMain').value = inner.join('');
+  if (inner.length === 0 && log.length === 0){
+    outputMain.value = "0";
+  } else if (inner.length > 0){
+    outputMain.value = inner.join('');
   } else {
-    document.getElementById('outputMain').value = log[log.length-1];
+    outputMain.value = log[log.length-1];
   }
 }
 
-function displaySub(value){
-  let val = document.getElementById('outputSub').value;
-  if (!marker){
-    val = "";
-    marker = true;
+function displaySub(){
+    if (inner.length === 0 && log.length === 0){
+    outputSub.value = "0";
+  } else {
+    outputSub.value = log.join('')+inner.join('');
   }
-  document.getElementById('outputSub').value = val + value;
+
 }
 
 function findAns(){
@@ -58,14 +61,13 @@ function findAns(){
     log.push(inner.join(''))
   }
   let ans = eval(log.join(''))
-  document.getElementById('outputMain').value = ans;
-  displaySub("="+ans);
+  outputMain.value = ans;
+  outputSub.value = outputSub.value+"="+ans;
 }
 
 function clearScreen(){
-  document.getElementById('outputMain').value = 0;
-  document.getElementById('outputSub').value = 0;
+  outputMain.value = 0;
+  outputSub.value = 0;
   log = [];
   inner = [];
-  marker = false;
 }
