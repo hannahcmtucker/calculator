@@ -13,11 +13,12 @@ window.onload = function (){
         if (value === "="){
           findAns();
         } else {
-          logInput(value);
-          displayMain();
-          displaySub(value);
+          if (!operators.includes(value) || log.length > 0 || inner.length > 0){
+            logInput(value);
+            displayMain();
+            displaySub(value);
+          }
         } 
-
       }
     }
   });
